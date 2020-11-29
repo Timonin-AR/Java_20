@@ -1,3 +1,5 @@
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,11 +14,32 @@ import java.util.ArrayList;
  */
 
 public class Base {
+    public static int randomWithRange(int min, int max){
+        int range = (max - min) + 1;
+        return (int)(Math.random() * range) + min;
+    }
+
+    public static class Sweets
+    {
+        int weight;
+        int price;
+        String name;
+
+        Sweets (int weight, int price, String name){
+            this.name = name;
+            this.price = price;
+            this.weight = weight;
+
+        }
+    }
+
     public static void main(String[] args) throws IOException {
 //        System.out.println("Вечер в хату, мир");
 //        System.out.printf("%d", 7845)
         //ЗАДАНИЕ 3
-        System.out.println("Какую программу хотете запустить? \n 1 - Какалятор \n 2 - БигСлово");
+
+        System.out.println("Какую программу хотете запустить? \n 1 - Какалятор \n 2 - БигСлово\n 3 - Массивы" +
+                "\n 4 - СюрпрайзМазафака");
         BufferedReader readr = new BufferedReader(new InputStreamReader(System.in));
         int start = Integer.parseInt(readr.readLine());
         switch (start) {
@@ -48,8 +71,7 @@ public class Base {
                 while (true) {
                     if (readr.readLine().equals("")) {
                         break;
-                    }
-                    else
+                    } else
                         list.add(readr.readLine());
                 }
                 int i = 0;
@@ -62,6 +84,56 @@ public class Base {
                     }
                 }
                 System.out.println("Слово максимальной длины: " + list.get(indexOfMax) + ", длина: " + maxLen);
+
+            case (3):
+                System.out.println("Создаю массив[20] из рандомных чисел от -10 до 10");
+                int [] array = new int[20];
+                for (int j = 0; j < array.length; j++) {
+                    array[j] = randomWithRange(-10,10);
+                    System.out.print("["+array[j]+"]");
+                }
+                System.out.println("\nИщу максимальное и минимальное значение в массиве");
+                int maxNumber =0 ;
+                int maxIndex =0 ;
+                int minNumber = 0;
+                int minIndex = 0;
+                for ( i = 0; i < array.length; i++) {
+
+                    if(maxNumber <= array[i]){
+                        maxNumber = array[i];
+                        maxIndex = i;
+                    }
+                    if (minNumber >= array[i]) {
+                        minNumber = array[i];
+                        minIndex = i;
+                    }
+                }
+                System.out.println("Минимальный: "+minNumber + " и его индекс в массиве = "+(minIndex+1)+"\nМаксимальное: "+maxNumber + " и его индекс в массиве = "+(maxIndex+1)+"\n \nМеняю их местами");
+                array [maxIndex] = minNumber;
+                array [minIndex] = maxNumber;
+                System.out.println("Полученный результат:\n");
+                for (int k = 0; k < array.length; k++) {
+                    System.out.print("["+array[k]+"]");
+                }
+
+            case(4):
+                System.out.println("Создали подарок вместительностью в 3 сладости");
+                Sweets[] gift = new Sweets[3];
+
+                Sweets cake = new Sweets(12,31,"Печенье");
+                Sweets Candy = new Sweets(2,1, "Конфета");
+                Sweets Jellybean = new Sweets(10,8, "Мармелад");
+                gift[0] = cake;
+                gift[1] = Candy;
+                gift[2] = Jellybean;
+                System.out.println("Добавили в него "+ cake.name+ " , " + Candy.name+" , "+ Jellybean.name+"\n А теперь посчитаем чтолько он стоит и сколько весит...");
+                System.out.println("Вес подарка составляет: "+ (cake.weight+Candy.weight+Jellybean.weight)+" грамма. \n Его стоимость = "+ (cake.price+Candy.price+Jellybean.price)+" деревенных. \n В нем лежит: "+ cake.name +", "+ Candy.name+", "+Jellybean.name
+                );
+
+
+
+
+
 
         }
     }
