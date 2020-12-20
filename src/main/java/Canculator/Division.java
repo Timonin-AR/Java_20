@@ -7,7 +7,7 @@ public class Division extends Addition {
         }
         public static int Act (int a, int b)
         {
-            return a/b;
+                return a/b;
         }
         public static float Act (float a, float b)
         {

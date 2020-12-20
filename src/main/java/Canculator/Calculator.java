@@ -9,7 +9,14 @@ public class Calculator {
 
 
     public static void main(String[] args) throws IOException {
-        System.out.println(Multiplication.Act(3,2));
+        try {
+            System.out.println(Division.Act(2,0));
+        }
+        catch (Exception e)
+        {
+            System.out.println("Делить на нуль нельзя... Ебобо?");
+        }
+
 
     }
 
