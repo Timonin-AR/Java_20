@@ -1,4 +1,4 @@
-package StatisticsWords;
+package Task6;
 
 import java.io.FileReader;
 import java.io.IOException;

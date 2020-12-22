@@ -1,11 +1,10 @@
-package Canculator;
+package Task7;
 
-import java.io.BufferedReader;
+import Task5.Canculator.Division;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
 
-public class Calculator {
+public class CalculatorTryCatch {
 
 
     public static void main(String[] args) throws IOException {

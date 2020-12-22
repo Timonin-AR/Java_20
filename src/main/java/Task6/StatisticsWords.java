@@ -1,4 +1,4 @@
-package StatisticsWords;
+package Task6;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -7,7 +7,7 @@ import java.util.Map;
 public class StatisticsWords {
     public static void main(String[] args) throws IOException {
         System.out.println("Считываем файл...");
-        String b = ScanFile.scanFile("C:\\Users\\TIMONIN\\IdeaProjects\\Java 2.0\\src\\main\\java\\StatisticsWords\\text.txt");
+        String b = ScanFile.scanFile("C:\\Users\\TIMONIN\\IdeaProjects\\Java 2.0\\src\\main\\java\\Task6\\text.txt");
         System.out.println("Файл считан. В нем лежат слова: \n" + b);
         String[] a = ScanFile.splitStringToList(b);
         System.out.println("Разделяю слова, чтобы их подсчитать:");

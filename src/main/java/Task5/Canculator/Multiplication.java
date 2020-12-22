@@ -1,4 +1,4 @@
-package Canculator;
+package Task5.Canculator;
 
 public class Multiplication extends Addition {
     Multiplication(int a, int b) {

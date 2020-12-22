@@ -1,5 +1,7 @@
-import Canculator.Division;
-import Canculator.*;
+package Task8;
+
+import Task5.Canculator.Division;
+import Task5.Canculator.*;
 import org.junit.Assert;
 import org.junit.Test;
 
